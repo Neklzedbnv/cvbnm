@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Подукты в продаже</h1>
+    <h2>Добропожаловать в магазин</h2>
+    <ul>
+        {%for product in products%}
+          <li>{{product.name}}-{{product.description}}-{{product.price}}
+              <form method="POST" action="{{url_for('delete' ,id=product.id)}}">
+                 <input type="submit" value="Удалить">
+              </form>
+        </li>
+        {% endfor %}
+
+    </ul>
+
+    <a href="/">Меню</a>
+
+</body>
+</html>
